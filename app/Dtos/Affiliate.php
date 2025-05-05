@@ -7,7 +7,6 @@ use Illuminate\Support\Collection;
 
 class Affiliate
 {
-
     public function __construct(
         public ?string $latitude = null,
         public ?string $longitude = null,
