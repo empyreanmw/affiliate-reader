@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Requests\Settings;
+namespace App\Http\Requests\Affiliates;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class AffiliateUploadRequest extends FormRequest
 {
@@ -14,6 +13,8 @@ class AffiliateUploadRequest extends FormRequest
      */
     public function rules(): array
     {
-        
+        return [
+            'affiliate_file' => 'required|file|mimetypes:application/x-ndjson,text/plain|max:10240',
+        ];
     }
 }

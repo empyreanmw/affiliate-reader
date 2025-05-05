@@ -9,6 +9,6 @@ class AffiliateIndexController extends Controller
 {
     public function __invoke(): View
     {
-        return view('affiliate');
+        return view('affiliates');
     }
 }
