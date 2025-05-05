@@ -7,33 +7,49 @@ use Illuminate\Support\Collection;
 
 class Affiliate
 {
+
     public function __construct(
-        public string $latitude,
-        public string $longitude,
-        public int $affiliateId,
-        public string $name,
+        public ?string $latitude = null,
+        public ?string $longitude = null,
+        public ?int $affiliateId = null,
+        public ?string $name = null,
     ) {}
 
-    public function getLatitude(): string
+    /**
+     * @return string|null
+     */
+    public function getLatitude(): ?string
     {
         return $this->latitude;
     }
 
-    public function getLongitude(): string
+    /**
+     * @return string|null
+     */
+    public function getLongitude(): ?string
     {
         return $this->longitude;
     }
 
-    public function getName(): string
+    /**
+     * @return string|null
+     */
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function getAffiliateId(): string
+    /**
+     * @return string|null
+     */
+    public function getAffiliateId(): ?string
     {
         return $this->affiliateId;
     }
 
+    /**
+     * @return Collection
+     */
     public function toCollection(): Collection
     {
         return collect([
@@ -44,6 +60,9 @@ class Affiliate
         ]);
     }
 
+    /**
+     * @return array
+     */
     public function toArray(): array
     {
         return $this->toCollection()->toArray();

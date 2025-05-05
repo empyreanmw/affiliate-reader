@@ -55,10 +55,10 @@ class AffiliateRetrievalService
                 $data = json_decode($line, true);
 
                 return json_last_error() === JSON_ERROR_NONE ? new Affiliate(
-                    latitude: $data['latitude'],
-                    longitude: $data['longitude'],
-                    affiliateId: $data['affiliate_id'],
-                    name: $data['name'],
+                    latitude: $data['latitude'] ?? null,
+                    longitude: $data['longitude'] ?? null,
+                    affiliateId: $data['affiliate_id'] ?? null,
+                    name: $data['name'] ?? null,
                 ) : null;
             })
             ->filter();
